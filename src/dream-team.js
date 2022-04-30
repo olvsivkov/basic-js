@@ -14,8 +14,8 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function createDreamTeam( /* members */ ) {
-    throw new NotImplementedError('Not implemented');
-    let filteredArr = this.filter(function(val) { return !(typeof val === "number" || val === "" || typeof val == "undefined" || val === null || val === true || val === false) })
+
+    let filteredArr = members.filter(function(val) { return !(typeof val === "number" || val === "" || typeof val == "undefined" || val === null || val === true || val === false) })
 
     return filteredArr.sort().map((word) => word[0]).join('')
 }
