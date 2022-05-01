@@ -13,11 +13,12 @@ const { NotImplementedError } = require('../extensions/index.js');
  * createDreamTeam(['Olivia', 1111, 'Lily', 'Oscar', true, null]) => 'LOO'
  *
  */
-function createDreamTeam( /* members */ ) {
+function createDreamTeam(members) {
 
-    let filteredArr = members.filter(function(val) { return !(typeof val === "number" || val === "" || typeof val == "undefined" || val === null || val === true || val === false) })
 
-    return filteredArr.sort().map((word) => word[0]).join('')
+    if (typeof members === "number" || members === "" || members === " " || typeof members == "undefined" || members === null || members === true || members === false) return false;
+    if (members.length === 1) return members.join().toUpperCase()
+    else return members.sort().map((word) => word[0]).join('')
 }
 
 module.exports = {
